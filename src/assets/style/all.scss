@@ -1,0 +1,44 @@
+@import './main';
+@import './func';
+html{
+    height:100%;
+}
+body{
+	color:#636363;
+    height:100%;
+}
+.clear-tit{
+    height:r(40);
+}
+.nav-bar{
+    display:flex;
+    position:fixed;
+    z-index:1;
+    bottom:0;
+    left:0;
+    right:0;
+    justify-content:space-between;
+    text-align: center;
+    height:r(52);
+    background: #f7f7fa;
+    border-top:1px solid #ddd;
+    padding-top:r(8);
+    color:#636363;
+    div.nav-item{
+    	width:25%;
+    	&.on{
+    		color:rgb(39, 162, 255);
+    	}
+    	.nav-icon{
+    		line-height:r(20);
+    		font-size:r(20);
+    	}
+    	p{
+    		line-height:r(30);
+    		font-weight:400;
+    	}
+    }
+}
+.mt20{
+    margin-top:r(20);
+}
