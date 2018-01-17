@@ -1,2 +1,0 @@
-# IsZoe.github.io
-zoe
