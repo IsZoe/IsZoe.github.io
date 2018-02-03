@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Arxiu | Cloud</title>
+    <title>归档 | Cloud</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Cloud">
-<meta property="og:url" content="http://iszoe.github.io/archives/index.html">
+<meta property="og:url" content="http://localhost:4000/archives/index.html">
 <meta property="og:site_name" content="Cloud">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cloud">
     
@@ -19,19 +20,19 @@
 
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/inin/public/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/inin/public/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/inin/public/libs/source-code-pro/styles.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/inin/public/css/style.css">
 
-    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/inin/public/libs/jquery/2.0.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+        <link rel="stylesheet" href="/inin/public/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+        <link rel="stylesheet" href="/inin/public/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
@@ -47,8 +48,12 @@
             <div class="container-inner">
                 <div id="header-title">
                     <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
+                        <a href="/inin/public/" class="logo"></a>
                     </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">From end to beginning</p>
+                        </h2>
                     
                 </div>
                 <div id="header-inner" class="nav-container">
@@ -57,10 +62,10 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
+                                    <a class="main-nav-list-link" href="/inin/public/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/">Diary</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/Tool/">Tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/测试/">测试</a></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -74,7 +79,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -86,19 +91,19 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'categories',
-            TAGS: 'etiquetes',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
+        ROOT_URL: '/inin/public/',
+        CONTENT_URL: '/inin/public/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js"></script>
+<script src="/inin/public/js/insight.js"></script>
 
 </div>
 
@@ -117,7 +122,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Arxiu
+    <i class="icon fa fa-archive"></i>归档
     </h1>
 </div>
                         <div class="main-body-content">
@@ -129,7 +134,7 @@
         
         <section class="archives-wrap">
             <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+                <a href="/inin/public/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
             </div>
             <div class="archives">
     
@@ -140,7 +145,7 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/01/16/webpack2k/" class="thumbnail">
+        <a href="/inin/public/2018/01/30/mocha/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -149,8 +154,6 @@
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://iszoe.github.io/2018/01/16/webpack2k/">0</span>
     
 </span>
 
@@ -161,19 +164,20 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a>
+            <a class="article-category-link" href="/inin/public/categories/测试/">测试</a>
             </div>
-            <div class="date"><time datetime="2018-01-16T10:14:30.000Z" itemprop="datePublished">2018-01-16</time></div>
+            <div class="date"><time datetime="2018-01-30T08:02:14.000Z" itemprop="datePublished">2018-01-30</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/16/webpack2k/">webpack2k</a>
+        <a href="/inin/public/2018/01/30/mocha/">前端自动化测试工具</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            在自己编写代码的过程中，因为大部分的业务代码，很少会去写测试用例，当然也很少去关注自动化测试这一块。但是在用到公共组件，模块的时候，编写测试用例，接入自动化测试，让自己写代码的时候有了一剂强心针。
+TDD（测试驱动开发）或BDD（行为驱动开发）TDD的原理是在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。TDD中侧重点偏向开发，有利于更加专注软件设计。BDD对TDD的
         </p>
     </div>
 </article>
@@ -186,7 +190,7 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/01/16/webpack/" class="thumbnail">
+        <a href="/inin/public/2018/01/25/linux01/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -195,8 +199,6 @@
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://iszoe.github.io/2018/01/16/webpack/">0</span>
     
 </span>
 
@@ -207,19 +209,20 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a>
+            <a class="article-category-link" href="/inin/public/categories/linux/">linux</a>
             </div>
-            <div class="date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></div>
+            <div class="date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/16/webpack/">webpack</a>
+        <a href="/inin/public/2018/01/25/linux01/">linux01</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            ##111111
+
         </p>
     </div>
 </article>
@@ -236,17 +239,15 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/01/16/hexo/" class="thumbnail">
+        <a href="/inin/public/2018/01/16/hexo/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/inin/public/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://iszoe.github.io/2018/01/16/hexo/">0</span>
     
 </span>
 
@@ -257,20 +258,20 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Diary/">Diary</a>
+            <a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a>
             </div>
-            <div class="date"><time datetime="2018-01-16T08:33:11.000Z" itemprop="datePublished">2018-01-16</time></div>
+            <div class="date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/16/hexo/">hexo</a>
+        <a href="/inin/public/2018/01/16/hexo/">Hexo 快速建站</a>
         </h1>
     
 
         <p class="article-excerpt">
-            header.ejs
-123&lt;li class=&quot;main-nav-list-item&quot; &gt;    &lt;a class=&quot;main-nav-list-link&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= __(&apos;index.&apos; + i.to
+            使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。
+首先保证你电脑里的 Node.js Git 已经安装。使用 npm 完成 Hexo 的安装。1234$ npm install -g hexo-cli$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm 
         </p>
     </div>
 </article>
@@ -283,7 +284,7 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/01/16/hello-world/" class="thumbnail">
+        <a href="/inin/public/2018/01/16/markdown/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -292,8 +293,6 @@
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://iszoe.github.io/2018/01/16/hello-world/">0</span>
     
 </span>
 
@@ -304,20 +303,19 @@
         
         <div class="article-meta">
             <div class="category">
-            
+            <a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a>
             </div>
-            <div class="date"><time datetime="2018-01-16T03:57:23.714Z" itemprop="datePublished">2018-01-16</time></div>
+            <div class="date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/16/hello-world/">Hello World</a>
+        <a href="/inin/public/2018/01/16/markdown/">Markdown 语法🐤</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+            
         </p>
     </div>
 </article>
@@ -335,12 +333,12 @@ Quick
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>seguir:</p>
+        <p>FOLLOW</p>
         <ul class="social-links">
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                    <a class="social-tooltip" title="github" href="https://github.com/isZoe" target="_blank">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -354,14 +352,14 @@ Quick
             
                 
     <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
+        <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/webpack2k/" class="thumbnail">
+                            <a href="/inin/public/2018/01/30/mocha/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -372,16 +370,16 @@ Quick
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a></p>
-                            <p class="item-title"><a href="/2018/01/16/webpack2k/" class="title">webpack2k</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T10:14:30.000Z" itemprop="datePublished">2018-01-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/测试/">测试</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/30/mocha/" class="title">前端自动化测试工具</a></p>
+                            <p class="item-date"><time datetime="2018-01-30T08:02:14.000Z" itemprop="datePublished">2018-01-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/webpack/" class="thumbnail">
+                            <a href="/inin/public/2018/01/25/linux01/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -392,8 +390,28 @@ Quick
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a></p>
-                            <p class="item-title"><a href="/2018/01/16/webpack/" class="title">webpack</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/25/linux01/" class="title">linux01</a></p>
+                            <p class="item-date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/inin/public/2018/01/16/hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/inin/public/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/16/hexo/" class="title">Hexo 快速建站</a></p>
                             <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
                         </div>
                     </li>
@@ -401,7 +419,7 @@ Quick
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/hexo/" class="thumbnail">
+                            <a href="/inin/public/2018/01/16/markdown/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -412,29 +430,9 @@ Quick
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a></p>
-                            <p class="item-title"><a href="/2018/01/16/hexo/" class="title">hexo</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T08:33:11.000Z" itemprop="datePublished">2018-01-16</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/01/16/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/01/16/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T03:57:23.714Z" itemprop="datePublished">2018-01-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/16/markdown/" class="title">Markdown 语法🐤</a></p>
+                            <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
                         </div>
                     </li>
                 
@@ -445,9 +443,9 @@ Quick
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
+        <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/webpack/">webpack</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -455,9 +453,9 @@ Quick
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">arxius</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/inin/public/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -471,13 +469,9 @@ Quick
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
                 
             </ul>
         </div>
@@ -488,6 +482,7 @@ Quick
         
     </div>
 </aside>
+
                 </div>
             </div>
         </div>
@@ -497,7 +492,7 @@ Quick
             <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
+                    <a href="/inin/public/" class="logo"></a>
                 </h1>
                 <p>&copy; 2018 Zoe</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
@@ -506,43 +501,28 @@ Quick
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        <script src="/inin/public/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
     
 
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js"></script>
+<script src="/inin/public/js/main.js"></script>
 
     </div>
 </body>

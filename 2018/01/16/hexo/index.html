@@ -3,41 +3,44 @@
 <head>
     <meta charset="utf-8">
     
-    <title>hexo | Cloud</title>
+    <title>Hexo 快速建站 | Cloud</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="header.ejs 123&amp;lt;li class=&amp;quot;main-nav-list-item&amp;quot; &amp;gt;    &amp;lt;a class=&amp;quot;main-nav-list-link&amp;quot; href=&amp;quot;&amp;lt;%- url_for(theme.menu[i]) %&amp;gt;&amp;quot;&amp;gt;&amp;lt;%= __(&amp;apos;index.&amp;apos; + i.to">
+    <meta name="description" content="使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。 首先保证你电脑里的 Node.js Git 已经安装。使用 npm 完成 Hexo 的安装。1234$ npm install -g hexo-cli$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo">
-<meta property="og:url" content="http://iszoe.github.io/2018/01/16/hexo/index.html">
+<meta property="og:title" content="Hexo 快速建站">
+<meta property="og:url" content="http://localhost:4000/2018/01/16/hexo/index.html">
 <meta property="og:site_name" content="Cloud">
-<meta property="og:description" content="header.ejs 123&amp;lt;li class=&amp;quot;main-nav-list-item&amp;quot; &amp;gt;    &amp;lt;a class=&amp;quot;main-nav-list-link&amp;quot; href=&amp;quot;&amp;lt;%- url_for(theme.menu[i]) %&amp;gt;&amp;quot;&amp;gt;&amp;lt;%= __(&amp;apos;index.&amp;apos; + i.to">
-<meta property="og:updated_time" content="2018-01-16T09:49:15.950Z">
+<meta property="og:description" content="使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。 首先保证你电脑里的 Node.js Git 已经安装。使用 npm 完成 Hexo 的安装。1234$ npm install -g hexo-cli$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://localhost:4000/2018/01/16/hexo/css/images/hexo.jpg">
+<meta property="og:updated_time" content="2018-02-02T03:58:34.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo">
-<meta name="twitter:description" content="header.ejs 123&amp;lt;li class=&amp;quot;main-nav-list-item&amp;quot; &amp;gt;    &amp;lt;a class=&amp;quot;main-nav-list-link&amp;quot; href=&amp;quot;&amp;lt;%- url_for(theme.menu[i]) %&amp;gt;&amp;quot;&amp;gt;&amp;lt;%= __(&amp;apos;index.&amp;apos; + i.to">
+<meta name="twitter:title" content="Hexo 快速建站">
+<meta name="twitter:description" content="使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。 首先保证你电脑里的 Node.js Git 已经安装。使用 npm 完成 Hexo 的安装。1234$ npm install -g hexo-cli$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
+<meta name="twitter:image" content="http://localhost:4000/2018/01/16/hexo/css/images/hexo.jpg">
     
 
     
 
     
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/inin/public/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/inin/public/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/inin/public/libs/source-code-pro/styles.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/inin/public/css/style.css">
 
-    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/inin/public/libs/jquery/2.0.3/jquery.min.js"></script>
     
     
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+        <link rel="stylesheet" href="/inin/public/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+        <link rel="stylesheet" href="/inin/public/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
@@ -53,8 +56,12 @@
             <div class="container-inner">
                 <div id="header-title">
                     <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
+                        <a href="/inin/public/" class="logo"></a>
                     </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">From end to beginning</p>
+                        </h2>
                     
                 </div>
                 <div id="header-inner" class="nav-container">
@@ -63,10 +70,10 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
+                                    <a class="main-nav-list-link" href="/inin/public/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/">Diary</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/Tool/">Tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/inin/public/categories/测试/">测试</a></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -80,7 +87,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -92,19 +99,19 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'categories',
-            TAGS: 'etiquetes',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
+        ROOT_URL: '/inin/public/',
+        CONTENT_URL: '/inin/public/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js"></script>
+<script src="/inin/public/js/insight.js"></script>
 
 </div>
 
@@ -123,7 +130,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Diary/">Diary</a>
+    <a class="page-title-link" href="/inin/public/categories/Tool/">Tool</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -134,7 +141,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        hexo
+        Hexo 快速建站
         </h1>
     
 
@@ -144,8 +151,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/01/16/hexo/" class="article-date">
-            <time datetime="2018-01-16T08:33:11.000Z" itemprop="datePublished">2018-01-16</time>
+        <a href="/inin/public/2018/01/16/hexo/" class="article-date">
+            <time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time>
         </a>
     </div>
 
@@ -154,8 +161,27 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>header.ejs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;li class=&quot;main-nav-list-item&quot; &gt;</span><br><span class="line">    &lt;a class=&quot;main-nav-list-link&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= __(&apos;index.&apos; + i.toLowerCase()) %&gt;&lt;/a&gt;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+            <p>使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。</p>
+<p>首先保证你电脑里的 Node.js Git 已经安装。<br>使用 npm 完成 Hexo 的安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<p>具体请参考: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">这里</a></p>
+<p>生成的目录结构<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">├── .deploy       <span class="comment">#需要部署的文件</span></span><br><span class="line">├── node_modules</span><br><span class="line">├── public        <span class="comment">#生成的静态网页文件</span></span><br><span class="line">├── scaffolds     <span class="comment">#模板</span></span><br><span class="line">├── <span class="built_in">source</span>        <span class="comment">#博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里</span></span><br><span class="line">|   ├── _drafts   <span class="comment">#草稿</span></span><br><span class="line">|   └── _posts    <span class="comment">#文章</span></span><br><span class="line">├── themes        <span class="comment">#主题</span></span><br><span class="line">├── _config.yml   <span class="comment">#全局配置文件</span></span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure></p>
+<p>找到全局配置文件的 _config.yml 修改网站基本信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: <span class="string">'inin'</span>   <span class="comment"># 标题</span></span><br><span class="line">subtitle:       <span class="comment"># 副标题 页面上展示的副标题需要在主题配置文件里设置</span></span><br><span class="line">description:    <span class="comment"># 描述</span></span><br><span class="line">author: Zoe     <span class="comment"># 作者</span></span><br><span class="line">language: zh-CN <span class="comment"># 语言</span></span><br><span class="line">timezone: Asia/Shanghai <span class="comment"># 时区</span></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line">url: http://localhost:4000 <span class="comment"># 配置你发布路径的url，在本地server的时候我配了localhost:4000</span></span><br><span class="line">root: /inin/public/        <span class="comment"># url上有目录的在root下配置，本地server根目录不在inin配置了root</span></span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line"><span class="comment"># Directory 目录</span></span><br><span class="line">source_dir: <span class="built_in">source</span> <span class="comment"># 源文件</span></span><br><span class="line">public_dir: public <span class="comment"># 生成的网页文件</span></span><br><span class="line">tag_dir: tags      <span class="comment"># 标签</span></span><br><span class="line">archive_dir: archives    <span class="comment"># 归档</span></span><br><span class="line">category_dir: categories <span class="comment"># 分类</span></span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang   <span class="comment"># 国际化</span></span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing 设置生成博文的默认格式,不用修改</span></span><br><span class="line">new_post_name: :title.md <span class="comment"># File name of new posts</span></span><br><span class="line">default_layout: post     <span class="comment"># 默认模板(post page photo draft)</span></span><br><span class="line">titlecase: <span class="literal">false</span>         <span class="comment"># 标题转换成大写</span></span><br><span class="line">external_link: <span class="literal">true</span>      <span class="comment"># 新标签页里打开连接</span></span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: <span class="literal">false</span></span><br><span class="line">post_asset_folder: <span class="literal">false</span></span><br><span class="line">relative_link: <span class="literal">false</span></span><br><span class="line">future: <span class="literal">true</span></span><br><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  auto_detect: <span class="literal">false</span></span><br><span class="line">  tab_replace:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line">index_generator:</span><br><span class="line">  path: <span class="string">''</span></span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag  分类和标签</span></span><br><span class="line">default_category: uncategorized <span class="comment">#默认分类</span></span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format  日期时间格式</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line">per_page: 10   <span class="comment">#每页文章数, 设置成 0 禁用分页</span></span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: hueman   主题设置</span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>:Github    <span class="comment">#部署类型, 本文使用Github</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章名"</span>       <span class="comment"># 新建一个md</span></span><br><span class="line">$ hexo new 布局 <span class="string">"文章名"</span>   <span class="comment"># 新建一个md</span></span><br><span class="line">$ hexo publish 布局 <span class="string">"文章名"</span> <span class="comment">#发布文章的操作，文章开始没有被分类到post</span></span><br><span class="line">$ hexo server            <span class="comment"># 运行本地服务</span></span><br><span class="line">$ hexo generate          <span class="comment"># 自动根据当前目录下文件,生成静态网页</span></span><br><span class="line">$ hexo deploy            <span class="comment"># 远程部署，同步到 GitHub</span></span><br><span class="line">$ hexo clean             <span class="comment"># 清除静态页面缓存（清除 public 文件夹）</span></span><br></pre></td></tr></table></figure>
+<h2 id="页面信息"><a href="#页面信息" class="headerlink" title="页面信息"></a>页面信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: <span class="string">"XXX"</span>                   <span class="comment"># 博文题目</span></span><br><span class="line">date: 2014-11-21 11:25:38      <span class="comment"># 生成时间</span></span><br><span class="line">tags: tag                      <span class="comment"># 标签, 多个标签也可以使用格式 [tag1, tag2, tag3,...]</span></span><br><span class="line">categories: cat                <span class="comment"># 多级使用 [cat1,cat2,cat3]</span></span><br><span class="line">comments: <span class="literal">false</span>                <span class="comment"># 关闭评论</span></span><br><span class="line">---</span><br><span class="line">正文, 使用 Markdown 语法书写</span><br></pre></td></tr></table></figure>
+<p>如果不想博文在首页全部显示, 并能出现阅读全文按钮效果, 需要在你想在首页显示的部分下添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">此处及以上的内容会在首页显示</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">一下是在首页隐藏的部分</span><br></pre></td></tr></table></figure></p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>选一个你喜欢的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a><br>我以hueman为例,下载之后更改文件夹名为hueman，放在 themes 文件夹内，修改全局配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: hueman <span class="comment">#改为你的主题文件名</span></span><br></pre></td></tr></table></figure></p>
+<p>为例支持内置的 search 需要下载 hexo-generator-json-content<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure></p>
+<p>详细见<a href="https://github.com/ppoffice/hexo-theme-hueman/wiki" target="_blank" rel="noopener">文档</a></p>
+<p>主题目录下的 _config.yml 为主题配置信息,可以修改你所需要的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menus</span></span><br><span class="line">menu:</span><br><span class="line">    Home: /</span><br><span class="line">    <span class="comment"># Delete this row if you don't want categories in your header nav bar</span></span><br><span class="line">    Categories: <span class="comment"># 如果你希望在侧边栏里面显示文章分分类的列表，不要忘记加上这个参数</span></span><br><span class="line">    Tags:       <span class="comment"># 同样的如果你希望在侧边栏里面显示文章标签列表，不要忘记加上这个参数</span></span><br><span class="line">    <span class="comment">#About: /2018/01/16/hexo</span></span><br><span class="line"><span class="comment">#如果需要副标题 需要添加</span></span><br><span class="line">subtitle:       <span class="comment"># 副标题</span></span><br><span class="line"><span class="comment"># Customize</span></span><br><span class="line">customize:</span><br><span class="line">    logo: <span class="comment"># 配置你自己的logo</span></span><br><span class="line">        width: 158   <span class="comment"># 你要设置的图片宽高px</span></span><br><span class="line">        height: 38</span><br><span class="line">        url: images/logo-name3.png <span class="comment"># 图片放在 hueman/source/css/images 内</span></span><br><span class="line">    theme_color: <span class="string">'#ff7849'</span> <span class="comment"># 可自定义的主题色</span></span><br><span class="line">    highlight: androidstudio</span><br><span class="line">    sidebar: left <span class="comment"># sidebar position, options: left, right</span></span><br><span class="line">    thumbnail: <span class="literal">true</span> <span class="comment"># 是否开启文章缩略图</span></span><br><span class="line">    favicon: <span class="comment"># path to favicon</span></span><br><span class="line">    social_links: <span class="comment"># for more icons, please see http://fontawesome.io/icons/#brand</span></span><br><span class="line">        <span class="comment">#twitter: /</span></span><br><span class="line">        <span class="comment">#facebook: /</span></span><br><span class="line">        <span class="comment">#google-plus: /</span></span><br><span class="line">        github: https://github.com/isZoe</span><br><span class="line">        <span class="comment">#weibo: /</span></span><br><span class="line">        <span class="comment">#rss: /</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Widgets</span></span><br><span class="line">widgets:</span><br><span class="line">    - recent_posts</span><br><span class="line">    - category</span><br><span class="line">    - archive</span><br><span class="line">    - tag</span><br><span class="line">    - tagcloud</span><br><span class="line">    - links</span><br><span class="line"></span><br><span class="line"><span class="comment"># Search</span></span><br><span class="line">search:</span><br><span class="line">    insight: <span class="literal">true</span> <span class="comment"># you need to install `hexo-generator-json-content` before using Insight Search</span></span><br><span class="line">    swiftype: <span class="comment"># enter swiftype install key here</span></span><br><span class="line">    baidu: <span class="literal">false</span> <span class="comment"># you need to disable other search engines to use Baidu search, options: true, false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Comment</span></span><br><span class="line">comment:</span><br><span class="line">    disqus: <span class="comment">#hexo-theme-hueman # enter disqus shortname here</span></span><br><span class="line">    duoshuo: <span class="comment"># enter duoshuo shortname here</span></span><br><span class="line">    youyan: <span class="comment"># enter youyan uid here</span></span><br><span class="line">    facebook: <span class="comment"># enter true to enable</span></span><br><span class="line">    isso: <span class="comment"># enter the domain name of your own comment isso server eg. comments.example.com</span></span><br><span class="line">    changyan:</span><br><span class="line">        appId: <span class="comment"># enter the changyan appId here</span></span><br><span class="line">        appKey: <span class="comment"># enter the changyan appKey here</span></span><br><span class="line">        on: <span class="comment"># enter true to enable</span></span><br><span class="line">    valine: <span class="comment"># Valine Comment System https://github.com/xCss/Valine</span></span><br><span class="line">        on:  <span class="comment"># enter true to enable valine</span></span><br><span class="line">        appId:  <span class="comment"># enter the leancloud application appId here</span></span><br><span class="line">        appKey:  <span class="comment"># enter the leancloud application appKey here</span></span><br><span class="line">        notify: <span class="comment"># enter true to enable &lt;Mail notifier&gt;</span></span><br><span class="line">        verify: <span class="comment"># enter true to enable &lt;Validation code&gt;</span></span><br><span class="line">        placeholder: Just Do It <span class="comment"># enter the comment box placeholder</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Share</span></span><br><span class="line">share: default <span class="comment"># options: jiathis, bdshare, addtoany, default</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Plugins</span></span><br><span class="line">plugins:</span><br><span class="line">    lightgallery: <span class="literal">true</span> <span class="comment"># options: true, false</span></span><br><span class="line">    justifiedgallery: <span class="literal">true</span> <span class="comment"># options: true, false</span></span><br><span class="line">    google_analytics: <span class="comment"># enter the tracking ID for your Google Analytics</span></span><br><span class="line">    baidu_analytics: <span class="comment"># enter Baidu Analytics hash key</span></span><br><span class="line">    bing_site_verification: <span class="comment"># enter Bing verification key here</span></span><br><span class="line">    mathjax: <span class="literal">false</span> <span class="comment"># options: true, false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">miscellaneous:</span><br><span class="line">    open_graph: <span class="comment"># see http://ogp.me</span></span><br><span class="line">        fb_app_id:</span><br><span class="line">        fb_admins:</span><br><span class="line">        twitter_id:</span><br><span class="line">        google_plus:</span><br><span class="line">    links:</span><br><span class="line">        <span class="comment">#Hexo: http://hexo.io</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="文章多级分类"><a href="#文章多级分类" class="headerlink" title="文章多级分类"></a>文章多级分类</h3><p>想在侧边栏显示多级的文章分类，记得在 _config.yml 中开启 Categories: 。<br>在文章.md头部加上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">categories: [cat1 ,cat2]  <span class="comment"># 多级可使用数组的形式,侧边栏的分类 hueman 默认只支持到两级</span></span><br></pre></td></tr></table></figure></p>
+<p>如果想支持更多级分类，去 hueman/layout/widget/category.ejs<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;%- list_categories(site.categories,&#123;</span><br><span class="line">    depth: <span class="number">2</span>, <span class="comment">// 把depth 参数修改成你想要的层级数</span></span><br><span class="line">    style: <span class="string">'list'</span>,</span><br><span class="line">    show_count: <span class="literal">true</span>,</span><br><span class="line">&#125;) %&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h3 id="文章缩略图"><a href="#文章缩略图" class="headerlink" title="文章缩略图"></a>文章缩略图</h3><p>想试用文档缩略图，记得在 _config.yml 中开启 thumbnail: true 。<br>默认会选取文章的第一张图作为缩略图，你也可以自定义啦，去文章.md在头部加上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">thumbnail: <span class="string">'css/images/hexo.jpg'</span> <span class="comment"># 图片放在 hueman/source/css/images 内</span></span><br><span class="line">                                 <span class="comment"># 或者直接引用外链</span></span><br></pre></td></tr></table></figure></p>
+<p>文件路径有个坑，文档里面使用了一个外链没有任何问题，但是如果想试用站内链接，我们把图片放在hueman/source/css/images 内,在 page 的页面里面 sidebar 的预览图就会因为路径错误显示不正确。<br>于是我参考了一下 页面 logo 的处理方式，打开 hueman/layout/common/thumbnail.ejs<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line">&lt;% <span class="keyword">var</span> thumbnailUrl = thumbnail(post) %&gt;</span><br><span class="line">&lt;% <span class="keyword">if</span> (thumbnailUrl) &#123; %&gt;</span><br><span class="line">    <span class="comment">// 将 background-image:url(&lt;%- thumbnailUrl %&gt;) url的路径修改成以下参数</span></span><br><span class="line">    &lt;span style=<span class="string">"background-image:url(&lt;%- url_for(post.thumbnail) %&gt;)"</span> alt=<span class="string">"&lt;%= post.title %&gt;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail-image"</span>&gt;&lt;/span&gt;</span><br><span class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以把图片保存在本地啦～</p>
+<h3 id="更换代码块样式"><a href="#更换代码块样式" class="headerlink" title="更换代码块样式"></a>更换代码块样式</h3><p>这个只需要在主题的 _config.yml 中修改 highlight 的值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">highlight: github  <span class="comment"># 更换你想要的代码主题样式</span></span><br></pre></td></tr></table></figure></p>
+<p>可以选择哪些样式呢，我们可以去 hueman/source/css/_highlight 文件夹,里面有很多 .styl 文件，文件名就是可选值。</p>
+<p>简单的整理了一下自己的笔记，持续更新中..</p>
+<p>参考链接<br><a href="https://www.jianshu.com/p/b7886271e21a" target="_blank" rel="noopener">Hexo安装和配置</a></p>
 
         </div>
         <footer class="article-footer">
@@ -163,7 +189,7 @@
 
 
 
-    <a data-url="http://iszoe.github.io/2018/01/16/hexo/" data-id="cjchdsfmr0000iqoyg89ctv7t" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://localhost:4000/2018/01/16/hexo/" data-id="cjd74ncij0004j3oyvtaimuz3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -229,12 +255,6 @@
 
     <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
     </section>
 
 
@@ -243,12 +263,12 @@
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>seguir:</p>
+        <p>FOLLOW</p>
         <ul class="social-links">
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                    <a class="social-tooltip" title="github" href="https://github.com/isZoe" target="_blank">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -260,20 +280,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/01/16/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">més nou</strong>
+        <a href="/inin/public/2018/01/25/linux01/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            webpack
+            linux01
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2018/01/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">antic</strong>
-        <p class="article-nav-title">Hello World</p>
+        <a href="/inin/public/2018/01/16/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Markdown 语法🐤</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -285,14 +305,14 @@
             
                 
     <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
+        <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/webpack2k/" class="thumbnail">
+                            <a href="/inin/public/2018/01/30/mocha/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -303,16 +323,16 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a></p>
-                            <p class="item-title"><a href="/2018/01/16/webpack2k/" class="title">webpack2k</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T10:14:30.000Z" itemprop="datePublished">2018-01-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/测试/">测试</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/30/mocha/" class="title">前端自动化测试工具</a></p>
+                            <p class="item-date"><time datetime="2018-01-30T08:02:14.000Z" itemprop="datePublished">2018-01-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/webpack/" class="thumbnail">
+                            <a href="/inin/public/2018/01/25/linux01/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -323,8 +343,28 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/webpack/">webpack</a></p>
-                            <p class="item-title"><a href="/2018/01/16/webpack/" class="title">webpack</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/25/linux01/" class="title">linux01</a></p>
+                            <p class="item-date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/inin/public/2018/01/16/hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/inin/public/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/16/hexo/" class="title">Hexo 快速建站</a></p>
                             <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
                         </div>
                     </li>
@@ -332,7 +372,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/01/16/hexo/" class="thumbnail">
+                            <a href="/inin/public/2018/01/16/markdown/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -343,29 +383,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a></p>
-                            <p class="item-title"><a href="/2018/01/16/hexo/" class="title">hexo</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T08:33:11.000Z" itemprop="datePublished">2018-01-16</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/01/16/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/01/16/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2018-01-16T03:57:23.714Z" itemprop="datePublished">2018-01-16</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/inin/public/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/inin/public/2018/01/16/markdown/" class="title">Markdown 语法🐤</a></p>
+                            <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
                         </div>
                     </li>
                 
@@ -376,9 +396,9 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
+        <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/webpack/">webpack</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/inin/public/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -386,9 +406,9 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">arxius</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/inin/public/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -402,13 +422,9 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
                 
             </ul>
         </div>
@@ -419,6 +435,7 @@
         
     </div>
 </aside>
+
                 </div>
             </div>
         </div>
@@ -428,7 +445,7 @@
             <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
+                    <a href="/inin/public/" class="logo"></a>
                 </h1>
                 <p>&copy; 2018 Zoe</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
@@ -437,45 +454,28 @@
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://iszoe.github.io/2018/01/16/hexo/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
 
 
     
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/inin/public/libs/lightgallery/js/lg-video.min.js"></script>
     
     
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+        <script src="/inin/public/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
     
 
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js"></script>
+<script src="/inin/public/js/main.js"></script>
 
     </div>
 </body>
