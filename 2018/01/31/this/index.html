@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>JavaScript 中 this 的理解 | Cloud</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="this到底指向哪里在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来梳理下自己对这两个疑点的理解。 执行时指定 一般而言JavaScript中，this 指向函数执行的当前对象  举个栗子12345678910111213var a = &amp;#123;    name: &apos;bob&apos;,    showName: function()&amp;#123;        c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 中 this 的理解">
+<meta property="og:url" content="http://iszoe.github.io/2018/01/31/this/index.html">
+<meta property="og:site_name" content="Cloud">
+<meta property="og:description" content="this到底指向哪里在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来梳理下自己对这两个疑点的理解。 执行时指定 一般而言JavaScript中，this 指向函数执行的当前对象  举个栗子12345678910111213var a = &amp;#123;    name: &apos;bob&apos;,    showName: function()&amp;#123;        c">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://iszoe.github.io/2018/01/31/this/css/images/this.jpg">
+<meta property="og:updated_time" content="2018-02-11T09:08:06.266Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 中 this 的理解">
+<meta name="twitter:description" content="this到底指向哪里在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来梳理下自己对这两个疑点的理解。 执行时指定 一般而言JavaScript中，this 指向函数执行的当前对象  举个栗子12345678910111213var a = &amp;#123;    name: &apos;bob&apos;,    showName: function()&amp;#123;        c">
+<meta name="twitter:image" content="http://iszoe.github.io/2018/01/31/this/css/images/this.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/xrz.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">From end to beginning</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tool/">Tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/js/">js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/测试/">测试</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/js/">js</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/js/基础/">基础</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-this" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        JavaScript 中 this 的理解
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/01/31/this/" class="article-date">
+            <time datetime="2018-01-31T06:01:36.000Z" itemprop="datePublished">2018-01-31</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="this到底指向哪里"><a href="#this到底指向哪里" class="headerlink" title="this到底指向哪里"></a>this到底指向哪里</h2><p>在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来梳理下自己对这两个疑点的理解。</p>
+<h3 id="执行时指定"><a href="#执行时指定" class="headerlink" title="执行时指定"></a>执行时指定</h3><blockquote>
+<p>一般而言JavaScript中，this 指向函数执行的当前对象</p>
+</blockquote>
+<p>举个栗子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name: <span class="string">'lily'</span>,</span><br><span class="line">    showName: a.showName</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.showName() <span class="comment">//lily</span></span><br></pre></td></tr></table></figure></p>
+<p>this 指向了 showName 函数运行时的对象b</p>
+<p>emmm…  那没有明确的执行对象呢，我们来看下一个栗子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = a.showName;</span><br><span class="line"></span><br><span class="line">b() <span class="comment">//jack</span></span><br></pre></td></tr></table></figure></p>
+<p>b 函数执行时没有明确的执行对象，此时函数中的 this 就会指向全局（浏览器中为 window node 为 global）。<br>浏览器中相当于执行的为 window.b()，this 指向window， window.name 输出 jack。</p>
+<p>好，我相信到这里已经解释的差不多了，看下面这个栗子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name: <span class="string">'lily'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fn = a.showName ;</span><br><span class="line">        fn()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.showName()</span><br></pre></td></tr></table></figure></p>
+<p>是否能一眼看出答案呢，我们来看看函数里面 this 指向</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = &#123;</span><br><span class="line">    name: <span class="string">'lily'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//  showName 挂在对象b下，b.showName 执行中的 this 指向 b</span></span><br><span class="line">        <span class="keyword">var</span> fn = a.showName ;</span><br><span class="line">        <span class="comment">// 声明相当于 挂在 window下，window.fn</span></span><br><span class="line">        fn()</span><br><span class="line">        <span class="comment">//执行时 window.fn 中的 this 指向的当然指向是 b 啦</span></span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b.showName()<span class="comment">// jack</span></span><br></pre></td></tr></table></figure>
+<h3 id="匿名函数-和-setTimeout-setInterval函数执行时-this-的对象时全局对象"><a href="#匿名函数-和-setTimeout-setInterval函数执行时-this-的对象时全局对象" class="headerlink" title="匿名函数 和 setTimeout,setInterval函数执行时 this 的对象时全局对象"></a>匿名函数 和 setTimeout,setInterval函数执行时 this 的对象时全局对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;,</span><br><span class="line">    myName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">            <span class="comment">// this 指向 window</span></span><br><span class="line">            callback();</span><br><span class="line">        &#125;)(a.showName)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.myName() <span class="comment">//jack</span></span><br></pre></td></tr></table></figure>
+<p>匿名函数 函数执行时 this 的对象时全局对象,setTimeout 和 setInterval执行时的函数内的this 也是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'lucy'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    myName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//此时的 this 指向对象a</span></span><br><span class="line">        setTimeout(<span class="keyword">this</span>.showName,<span class="number">1000</span>) <span class="comment">//setTimeout 延迟执行 a.showName 函数中的this 指向window</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> a.myName()<span class="comment">// window</span></span><br></pre></td></tr></table></figure>
+<p>setTimeout中的延迟执行的代码中的this永远都指向window。<br>再看一个</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'lili'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name =  <span class="string">'jack'</span>;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(name); <span class="comment">//函数内声明的变量 name</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">//this 指向window  window.name lili</span></span><br><span class="line">    &#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name =  <span class="string">'lucy'</span>;</span><br><span class="line">    setTimeout(<span class="string">'console.log(name)'</span>,<span class="number">1000</span>)</span><br><span class="line">    setTimeout(<span class="string">'console.log(this.name)'</span>,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b() <span class="comment">// jack lili</span></span><br><span class="line">c() <span class="comment">// lili lili</span></span><br></pre></td></tr></table></figure>
+<p>对比一下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'lili'</span>;</span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'lucy'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(name);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;,</span><br><span class="line">    myName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="string">"this.showName()"</span>,<span class="number">1000</span>) <span class="comment">//在window全局作用域下创建 函数this.showName()，window下无showName方法。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">a.myName() <span class="comment">// Uncaught TypeError: this.showName is not a function</span></span><br></pre></td></tr></table></figure>
+<p>有个共同的现象如果setTimeout(字符串代码, 延迟) 使用这种方式执行的函数，默认会在window全局作用域下创建一个新的函数。此时this 会指向 window。</p>
+<p>总结一下</p>
+<ul>
+<li>setTimeout中的延迟执行的代码中的this永远都指向window</li>
+<li>setTimeout(this.showName,1000) 这种形式中的this，即上文中提到的第一个this，是根据上下文来判断的</li>
+<li>setTimeout(“this.showName()”,1000) 执行代码如果是字符串形式的代码，默认在window全局作用域下创建一个新的函数</li>
+</ul>
+<h3 id="eval-等同于在这个地方直接填入代码"><a href="#eval-等同于在这个地方直接填入代码" class="headerlink" title="eval 等同于在这个地方直接填入代码"></a>eval 等同于在这个地方直接填入代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">eval</span>(<span class="string">'console.log(this.name)'</span>); <span class="comment">//和直接执行console.log(this.name) 相同</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">a.showName() <span class="comment">// bob</span></span><br></pre></td></tr></table></figure>
+<h3 id="apply-和-call-，bind-改变函数执行当前对象"><a href="#apply-和-call-，bind-改变函数执行当前对象" class="headerlink" title="apply 和 call ，bind 改变函数执行当前对象"></a>apply 和 call ，bind 改变函数执行当前对象</h3><p>eval 可以调用 .call  的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'jack'</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'bob'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">eval</span>(<span class="string">'console.log(this.name)'</span>); <span class="comment">//和直接执行console.log(this.name) 相同</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">a.showName() <span class="comment">// bob</span></span><br></pre></td></tr></table></figure>
+<h3 id="lamda表达式-箭头函数-this-的指向"><a href="#lamda表达式-箭头函数-this-的指向" class="headerlink" title="lamda表达式(箭头函数) this 的指向"></a>lamda表达式(箭头函数) this 的指向</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'lucy'</span>,</span><br><span class="line">    showName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    myName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.showName();</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> a.myName()<span class="comment">// a</span></span><br></pre></td></tr></table></figure>
+<h3 id="构造函数调用中的this-指向"><a href="#构造函数调用中的this-指向" class="headerlink" title="构造函数调用中的this 指向"></a>构造函数调用中的this 指向</h3><h3 id="use-strict-模式"><a href="#use-strict-模式" class="headerlink" title="use strict 模式"></a>use strict 模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//undefined</span></span><br><span class="line">    a.apply(<span class="literal">null</span>)      <span class="comment">//window</span></span><br><span class="line">    a.apply(<span class="keyword">this</span>)      <span class="comment">//window</span></span><br><span class="line">    a.apply(<span class="literal">undefined</span>) <span class="comment">//window</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//undefined</span></span><br><span class="line">    a.apply(<span class="literal">null</span>)      <span class="comment">//null</span></span><br><span class="line">    a.apply(<span class="keyword">this</span>)      <span class="comment">//undefined</span></span><br><span class="line">    a.apply(<span class="literal">undefined</span>) <span class="comment">//undefined</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<p>参考文章<br><a href="http://www.cnblogs.com/justany/archive/2012/11/01/the_keyword_this_in_javascript.html" target="_blank" rel="noopener">Javascript中this关键字详解</a><br><a href="http://www.cnblogs.com/justany/archive/2012/11/05/2754034.html" target="_blank" rel="noopener">Javascript的声明</a><br><a href="https://zhuanlan.zhihu.com/p/28140450" target="_blank" rel="noopener">我用了两个月的时间才理解 let</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://iszoe.github.io/2018/01/31/this/" data-id="cjdiggh0s0007fboy090ncy0x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>FOLLOW</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/isZoe" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/01/30/mocha/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">前端自动化测试工具</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/31/this/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/css/images/this.jpg)" alt="JavaScript 中 this 的理解" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/js/基础/">基础</a></p>
+                            <p class="item-title"><a href="/2018/01/31/this/" class="title">JavaScript 中 this 的理解</a></p>
+                            <p class="item-date"><time datetime="2018-01-31T06:01:36.000Z" itemprop="datePublished">2018-01-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/30/mocha/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/css/images/mocha.jpg)" alt="前端自动化测试工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/测试/">测试</a></p>
+                            <p class="item-title"><a href="/2018/01/30/mocha/" class="title">前端自动化测试工具</a></p>
+                            <p class="item-date"><time datetime="2018-01-30T08:02:14.000Z" itemprop="datePublished">2018-01-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/25/linux01/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
+                            <p class="item-title"><a href="/2018/01/25/linux01/" class="title">linux01</a></p>
+                            <p class="item-date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/16/hexo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/2018/01/16/hexo/" class="title">Hexo 快速建站</a></p>
+                            <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/16/markdown/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tool/">Tool</a></p>
+                            <p class="item-title"><a href="/2018/01/16/markdown/" class="title">Markdown 语法🐤</a></p>
+                            <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Zoe</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
