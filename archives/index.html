@@ -67,7 +67,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tool/">Tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/js/">js</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/测试/">测试</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tool/">Tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/测试/">测试</a></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -150,7 +150,7 @@
         <a href="/2018/01/31/this/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/this.jpg)" alt="JavaScript 中 this 的理解" class="thumbnail-image"></span>
+        <span style="background-image:url(/css/images/this.jpg)" alt="呕心沥血对 JavaScript 中 this 的理解" class="thumbnail-image"></span>
     
     
         
@@ -166,23 +166,21 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/js/">js</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/js/基础/">基础</a>
+            <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/基础/">基础</a>
             </div>
             <div class="date"><time datetime="2018-01-31T06:01:36.000Z" itemprop="datePublished">2018-01-31</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/31/this/">JavaScript 中 this 的理解</a>
+        <a href="/2018/01/31/this/">呕心沥血对 JavaScript 中 this 的理解</a>
         </h1>
     
 
         <p class="article-excerpt">
-            this到底指向哪里在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来梳理下自己对这两个疑点的理解。
-执行时指定
-一般而言JavaScript中，this 指向函数执行的当前对象
-
-举个栗子12345678910111213var a = &#123;    name: 'bob',    showName: function()&#123;        c
+            this到底指向哪里在JavaScript 中，函数中this到指向，经常会引起自己的困惑，所以写一篇文章来整理下自己对这个疑点的理解。
+函数的执行所有的 JavaScript 函数都有一个内部属性[[Call]]，用来运行该函数。1F.[[Call]](thisArg, argumentsList)
+上面代码中，F是一个函数对象，[[Call]]是它的内部方法，F.[call]表示运行该函数，t
         </p>
     </div>
 </article>
@@ -263,14 +261,14 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/linux/">linux</a>
+            <a class="article-category-link" href="/categories/Linux/">Linux</a>
             </div>
             <div class="date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/25/linux01/">linux01</a>
+        <a href="/2018/01/25/linux01/">Linux01</a>
         </h1>
     
 
@@ -292,7 +290,7 @@
         <a href="/2018/01/16/hexo/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
+        <span style="background-image:url(/css/images/hexo.jpg)" alt="Hexo 分分钟快速建站" class="thumbnail-image"></span>
     
     
         
@@ -315,13 +313,15 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/16/hexo/">Hexo 快速建站</a>
+        <a href="/2018/01/16/hexo/">Hexo 分分钟快速建站</a>
         </h1>
     
 
         <p class="article-excerpt">
-            使用 hexo + GitPage，来搭建静态博客那是相当 easy。用 Markdown 写文章做记录，再push 到 Git 上 ，简单快捷。
-首先保证你电脑里的 Node.js Git 已经安装。使用 npm 完成 Hexo 的安装。1234$ npm install -g hexo-cli$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm 
+            最近想认真的写一个博客来梳理自己的知识网络，在各路网友的推荐下，找到了 hexo + GitPage，来搭建静态博客，简单快捷，易上手，分分钟帮你建站。
+你要做的主要就是三步：1.安装 hexo2.下载一个你喜欢的主题3.执行hexo new XX开始写文章
+安装 hexo首先保证你电脑里的 Node.js，Git 已经安装。
+使用 npm 完成 Hexo 的安装。1234$ npm instal
         </p>
     </div>
 </article>
@@ -374,6 +374,10 @@
 类似 email 中用的引用方式
 
 1&gt; 类似 email 中用的引用方式
+行间代码code1行间代码`code`
+文字加粗文字加粗文字加粗对比文字加粗文字加粗
+12345**文字加粗**__文字加粗__对比*文字加粗*_文字加粗_
+空一行123aaaa&amp;nbsp;aaaa
 
         </p>
     </div>
@@ -421,7 +425,7 @@
                             <a href="/2018/01/31/this/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/this.jpg)" alt="JavaScript 中 this 的理解" class="thumbnail-image"></span>
+        <span style="background-image:url(/css/images/this.jpg)" alt="呕心沥血对 JavaScript 中 this 的理解" class="thumbnail-image"></span>
     
     
 </a>
@@ -429,8 +433,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/js/基础/">基础</a></p>
-                            <p class="item-title"><a href="/2018/01/31/this/" class="title">JavaScript 中 this 的理解</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/基础/">基础</a></p>
+                            <p class="item-title"><a href="/2018/01/31/this/" class="title">呕心沥血对 JavaScript 中 this 的理解</a></p>
                             <p class="item-date"><time datetime="2018-01-31T06:01:36.000Z" itemprop="datePublished">2018-01-31</time></p>
                         </div>
                     </li>
@@ -469,8 +473,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
-                            <p class="item-title"><a href="/2018/01/25/linux01/" class="title">linux01</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2018/01/25/linux01/" class="title">Linux01</a></p>
                             <p class="item-date"><time datetime="2018-01-25T04:00:33.000Z" itemprop="datePublished">2018-01-25</time></p>
                         </div>
                     </li>
@@ -481,7 +485,7 @@
                             <a href="/2018/01/16/hexo/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/hexo.jpg)" alt="Hexo 快速建站" class="thumbnail-image"></span>
+        <span style="background-image:url(/css/images/hexo.jpg)" alt="Hexo 分分钟快速建站" class="thumbnail-image"></span>
     
     
 </a>
@@ -490,7 +494,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Tool/">Tool</a></p>
-                            <p class="item-title"><a href="/2018/01/16/hexo/" class="title">Hexo 快速建站</a></p>
+                            <p class="item-title"><a href="/2018/01/16/hexo/" class="title">Hexo 分分钟快速建站</a></p>
                             <p class="item-date"><time datetime="2018-01-16T09:57:51.000Z" itemprop="datePublished">2018-01-16</time></p>
                         </div>
                     </li>
@@ -524,7 +528,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
