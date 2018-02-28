@@ -1101,7 +1101,6 @@ a.article-title:hover {
 .article-entry {
   color: #555;
   font-size: 16px;
-  font-weight: 300;
   line-height: 1.6em;
 }
 .article-entry:before,
@@ -1114,7 +1113,8 @@ a.article-title:hover {
 }
 .article-entry p,
 .article-entry table {
-  margin: 0.6em 0;
+  margin: 0.9em 0;
+  text-align: justify;
 }
 .article-entry h1,
 .article-entry h2,
@@ -1178,12 +1178,15 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  color: #777;
+  color: #7f6847;
   quote: none;
   margin: 0 0 20px 0;
   position: relative;
-  font-style: italic;
+  background: #f5f5f5;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 50px;
+  padding-right: 20px;
 }
 .article-entry blockquote:before {
   top: 0;
